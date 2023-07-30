@@ -1,0 +1,48 @@
+<div class="card-top container-fluid">
+   <div class="container d-flex">
+      <div class="item">
+         <a (click)="filterProducts('')">
+            <img
+               src="https://greatperformersacademy.com/images/images/Articles_images/Top-products-sell-online-2018.jpg">
+            <h6>All Products</h6>
+         </a>
+      </div>
+      <div class="item">
+         <a (click)="filterProducts('electronics')">
+            <img src="https://th.bing.com/th/id/OIP.h57TswrkyeEWHqN_9iVa9AHaFj?pid=ImgDet&rs=1">
+            <h6>Electonics</h6>
+         </a>
+      </div>
+      <div class="item">
+         <a (click)="filterProducts('fashion')">
+            <img src="https://th.bing.com/th/id/OIP.FqKfC5CCBpUFsdaE2gk_iAHaFj?pid=ImgDet&rs=1">
+            <h6>Fashion</h6>
+         </a>
+      </div>
+      <div class="item">
+         <a (click)="filterProducts('jewelery')">
+            <img src="https://th.bing.com/th/id/OIP.FfN0-0VhIigrc1_xI5wVRgHaHa?pid=ImgDet&rs=1">
+            <h6>Jewelery</h6>
+         </a>
+      </div>
+   </div>
+</div>
+
+<div class="container">
+   <div class="row">
+      <ng-container *ngFor="let data of filtercatagory | filter:searchkey:'title'">
+         <div class="card col-md-3">
+            <img src="{{data.image}}" style="width: 250px;height: 300px;">
+            <h5 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100ch" [title]="data.title">
+               {{data.title}}</h5>
+            <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width: 100ch;"
+               [title]="data.description">{{data.description}}</p>
+            <p>price <strong> ${{data.price}}</strong></p>
+            <div style="align-items: center;justify-content: center;display: flex;">
+               <button class="btn btn-primary w-50" (click)="addToCard(data)">Add to Card</button>
+            </div>
+         </div>
+      </ng-container>
+
+   </div>
+</div>

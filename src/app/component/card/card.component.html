@@ -1,0 +1,59 @@
+<ng-container *ngIf="product !=0 ">
+   <div class="container">
+      <div class="card-table">
+         <div class="card-product">
+            <div class="table table-responsive">
+               <thead>
+                  <tr>
+                     <th>Sr.No</th>
+                     <th>Product Image</th>
+                     <th>Product Name</th>
+                     <th>Desription</th>
+                     <th>Price</th>
+                     <th>Quantity</th>
+                     <th>Total</th>
+                     <th>Action</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let item of product;let i=index">
+                     <td>{{i+1}}</td>
+                     <td><img src="{{item.image}}" alt="" style="width: 120px;"></td>
+                     <td style="width:25%;">{{item.title}}</td>
+                     <td style="width: 75%;">{{item.description}}</td>
+                     <td style="width: 25%;">${{item.price}}</td>
+                     <td style="width: 25%;">{{item.quantity}}</td>
+                     <td style="width: 25%;">${{item.total}}</td>
+                     <td class="btn btn-danger" (click)="removeItem(item)"><i class="fa fa-trash-alt"></i>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="4"></td>
+                     <td><button class="btn btn-danger ok" (click)="
+                        empty()">Empty</button></td>
+                     <td><button class="btn btn-primary" routerLink="/product">shop Now</button></td>
+                     <td><button class="btn btn-success">check Out</button></td>
+                     <td><strong>Grand Total:${{grandTotal}}</strong></td>
+                  </tr>
+               </tbody>
+            </div>
+         </div>
+      </div>
+   </div>
+</ng-container>
+
+
+
+<ng-container *ngIf="product == 0">
+   <div class="container">
+      <div class="card">
+         <h5 class="card-title">My card</h5>
+      </div>
+      <div class="center">
+         <img src="https://logos-world.net/wp-content/uploads/2020/11/Flipkart-Logo.png" alt="">
+         <h4>Your card is empty</h4>
+         <h6>Add item to it now</h6>
+         <button class="btn btn-primary" routerLink="/product">Shop Now</button>
+      </div>
+   </div>
+</ng-container>

@@ -1,0 +1,52 @@
+:host {
+  .card-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: white;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  a,
+  img {
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  a h6 {
+    margin-right: 35px;
+    cursor: pointer;
+  }
+  a:hover h6 {
+    color: lightcoral;
+  }
+  .item {
+    display: flex;
+    gap: 2px;
+  }
+  .card {
+    padding: 15px;
+    margin: 35px;
+  }
+  .card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+  }
+  .card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+  }
+  div .item a img {
+    width: 150px;
+    height: 100px;
+    gap: 35px;
+    display: flex;
+    margin: 0 2px;
+    padding: 0 25px;
+  }
+}
